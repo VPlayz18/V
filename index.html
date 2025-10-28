@@ -1,43 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Welcome to India</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-		}
-		img {
-			width: 100%;
-			height: 400px;
-			object-fit: cover;
-			margin: 20px 0;
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Incredible India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:'Poppins', sans-serif;
+      background:#fff8f0;
+      color:#333;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    header {
+      background:linear-gradient(270deg,#ff9933,#ffffff,#138808);
+      background-size:400% 400%;
+      animation:gradientMove 6s ease infinite;
+      color:#000;
+      text-align:center;
+      padding:1.5rem 0;
+      font-family:'Merriweather',serif;
+      font-size:2rem;
+      font-weight:bold;
+      letter-spacing:2px;
+      text-shadow:0 0 8px #ffffff;
+    }
+
+    @keyframes gradientMove {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    nav {
+      background:#002868;
+      color:white;
+      padding:10px;
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      position:sticky;
+      top:0;
+      z-index:5;
+    }
+    nav a {
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    nav a:hover {color:#ffcc00;}
+
+    section {
+      padding:3rem 2rem;
+      max-width:1100px;
+      margin:auto;
+      opacity:0;
+      transform:translateY(30px);
+      animation:fadeUp 1.2s forwards;
+    }
+
+    @keyframes fadeUp {
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    .section-title {
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:1rem;
+      color:#002868;
+      border-bottom:3px solid #ff9933;
+      display:inline-block;
+      padding-bottom:5px;
+    }
+
+    .card {
+      background:white;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      margin:1.5rem 0;
+      padding:1.5rem;
+      animation:fadeUp 1.5s ease forwards;
+    }
+
+    .card img {
+      width:100%;
+      border-radius:10px;
+      margin-bottom:1rem;
+    }
+
+    /* Floating icons (Chakra, Lotus, Flag) */
+    .float-icon {
+      position:fixed;
+      width:60px;
+      height:60px;
+      opacity:0.8;
+      z-index:10;
+    }
+
+    @keyframes spin {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
+    }
+    @keyframes glow {
+      from {filter:drop-shadow(0 0 6px #ff66cc);}
+      to {filter:drop-shadow(0 0 16px #ff99ff);}
+    }
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-25px);}
+    }
+
+    .icon1 {bottom:80px; left:30px; animation:spin 8s linear infinite;}
+    .icon2 {top:100px; right:40px; animation:glow 2s ease-in-out infinite alternate;}
+    .icon3 {bottom:160px; right:70px; animation:float 5s ease-in-out infinite;}
+  </style>
 </head>
+
 <body>
-	<h1>Welcome to India</h1>
-	<p>Welcome to India, a land of timeless beauty, vibrant colors, and incredible diversity. From the snow-covered Himalayas to the sunny beaches of Goa, every corner of India tells a story of its own. Known as the world’s largest democracy and one of the oldest civilizations, India welcomes everyone with open arms and a warm smile. Here, tradition meets modernity, and unity shines through diversity — truly making it Incredible India!</p>
-	<img src="https://hannahfielding.net/wp-content/uploads/2022/07/Taj-Mahal-1.jpg">
+  <header>The Incredible India</header>
 
-	<h1>Culture of India</h1>
-	<p>The culture of India is one of the richest and most diverse in the world. Every state has its own language, cuisine, art forms, festivals, and customs. Indian culture celebrates life through music, dance, and color — whether it’s the joyful beats of Bhangra in Punjab, the graceful moves of Bharatanatyam in Tamil Nadu, or the festive spirit of Diwali and Holi. Respect for elders, hospitality, and togetherness are the pillars of Indian society. The blend of ancient heritage and modern progress makes Indian culture truly unique and everlasting.</p>
-	<img src="https://tse1.mm.bing.net/th/id/OIP.dLDZKstFgJXS_3vpLIzKZAHaEK?pid=Api&P=0&h=180">
+  <nav>
+    <a href="#culture">Culture</a>
+    <a href="#religion">Religion</a>
+    <a href="#airports">Airports</a>
+    <a href="#railways">Railways</a>
+    <a href="#viksit">Viksit Bharat Abhiyan</a>
+  </nav>
 
-	<h1>Religion of India</h1>
-	<p>India is the birthplace of major world religions like Hinduism, Buddhism, Jainism, and Sikhism, and it also embraces Islam, Christianity, Judaism, and many others. Religious harmony and tolerance are deeply rooted in Indian philosophy. Temples, mosques, churches, and gurudwaras stand side by side, reflecting the nation’s unity in diversity. Faith in India is not just a belief — it is a way of life that inspires kindness, peace, and spiritual growth for all.</p>
-	<img src="https://c.pxhere.com/images/9a/c4/bf8b0579658fdd5d8a15d50fc75c-1603837.jpg!d">
-	<img src="https://www.beautyofindia.in/wp-content/uploads/2017/01/unity-in-diversity.jpg">
+  <!-- Floating Animation Icons -->
+  <img src="https://tse1.mm.bing.net/th/id/OIP.PVVlM7UdSKpKlYarICb-GAHaHa?pid=Api&rs=1&c=1&qlt=95&w=108&h=108" class="float-icon icon1" alt="Chakra">
+  <img src="https://tse1.mm.bing.net/th/id/OIP.1Ux0Kj2EmuKv6B4Y2RC_TgHaFj?pid=Api&rs=1&c=1&qlt=95&w=145&h=109" class="float-icon icon2" alt="Lotus">
+  <img src="https://tse1.mm.bing.net/th/id/OIP.ch1Qa0brdm5cVRIv-od1bgHaHa?pid=Api&P=0&h=180" class="float-icon icon3" alt="Flag">
 
-	<h1>Infrastructure and Development</h1>
-	<p>India’s infrastructure is rapidly transforming under modern initiatives such as Viksit Bharat Abhiyan and Smart Cities Mission. The nation is building world-class expressways, modern airports, advanced rail networks, and digital infrastructure connecting even the remotest villages. Metro systems, high-speed trains, and sustainable urban planning are shaping the new face of India. This growing infrastructure reflects India’s vision to become a global leader and a developed nation by 2047 — truly a journey from developing to developed Bharat.</p>
-	<img src="https://worldinsight.com/wp-content/uploads/2022/08/0830_thumbnail_Indias-Infrastructure-Development-and-Japans-Cooperation.png">
-	<img src="https://www.nbmcw.com/images/34-Infra/45232-Infra-development-2.webp">
+  <section id="culture">
+    <h2 class="section-title">Indian Culture</h2>
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.P7Tu6JDS4AKUt3hwjbbXHwHaEK?pid=Api&P=0&h=180" alt="Indian Culture">
+      <p>India’s culture is a vibrant mix of languages, customs, and festivals that have evolved over thousands of years. It’s a living museum of art, food, and heritage, where every region tells a different story.</p>
+      <p>From the graceful moves of Bharatanatyam to the beats of Bhangra and the colors of Holi, India celebrates diversity through creativity. Its cultural richness lies in the philosophy of “Vasudhaiva Kutumbakam” — the world is one family.</p>
+    </div>
+  </section>
 
-	<h1>Viksit Bharat Abhiyan</h1>
-	<p>The Viksit Bharat Abhiyan (Developed India Mission) is a visionary movement launched to transform India into a fully developed nation by the year 2047 — the 100th year of independence. It focuses on empowering youth, strengthening the economy, promoting innovation, improving education and healthcare, and ensuring sustainable growth for all. The mission represents every Indian’s dream of a prosperous, strong, and self-reliant nation. Through this campaign, the government and citizens together are working to build a Viksit Bharat — a developed India for the generations to come.</p>
-	<img src="https://tse2.mm.bing.net/th/id/OIP.MamrSOKhYdqb54ykb9_5fQHaDq?pid=Api&P=0&h=180">
-	<img src="https://tse2.mm.bing.net/th/id/OIP.656VrFJgu-gftOyz737j1AHaEK?pid=Api&P=0&h=180">
+  <section id="religion">
+    <h2 class="section-title">Religion</h2>
+    <div class="card">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.fMe5hBLh117SkE64fdxGGgAAAA?pid=Api&P=0&h=180" alt="Indian Religion">
+      <p>India is home to the world’s most ancient faiths — Hinduism, Buddhism, Jainism, and Sikhism — and a land of peaceful coexistence among countless others. Every religion has shaped the nation’s values, festivals, and art.</p>
+      <p>Temples, mosques, churches, and gurdwaras stand side by side, echoing India’s harmony. From the Ganga Aarti to Christmas celebrations, spirituality here is both a journey and a celebration of togetherness.</p>
+    </div>
+  </section>
 
-	<p>Website Made By-Vijit</p>
+  <section id="airports">
+    <h2 class="section-title">Airports</h2>
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.CNjwSsZE62nL-TlmPEDfigHaEK?pid=Api&rs=1&c=1&qlt=95&w=205&h=115" alt="Indian Airports">
+      <p>India’s airports blend global sophistication with traditional aesthetics. Delhi, Mumbai, and Bengaluru boast stunning architecture inspired by Indian art, offering travelers a taste of culture the moment they arrive.</p>
+      <p>Modern technology and smart infrastructure make air travel seamless, while installations of murals and sculptures celebrate India’s artistry — symbolizing a nation flying high with pride.</p>
+    </div>
+  </section>
+
+  <section id="railways">
+    <h2 class="section-title">Indian Railways</h2>
+    <div class="card">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.U65HAPirm9Q8TKsaGN7K9gHaFR?pid=Api&P=0&h=180" alt="Indian Railways">
+      <p>Indian Railways connects more than just cities — it connects hearts. Stretching across 68,000 kilometers, it carries millions daily through bustling towns, serene villages, and breathtaking landscapes.</p>
+      <p>From luxury trains like the Palace on Wheels to high-speed Vande Bharat Express, India’s railways are a symbol of unity, progress, and nostalgia that define the Indian journey.</p>
+    </div>
+  </section>
+
+  <section id="viksit">
+    <h2 class="section-title">Viksit Bharat Abhiyan</h2>
+    <div class="card">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.x26flXbz2f6yQOuHhQsJigHaCe?pid=Api&P=0&h=180" alt="Viksit Bharat Abhiyan">
+      <p>The Viksit Bharat Abhiyan envisions a new era of prosperity — where innovation, sustainability, and inclusivity drive progress. It’s a mission to make India a developed nation by 2047.</p>
+      <p>Through education, renewable energy, digital advancement, and self-reliance, this initiative embodies the dream of a strong, modern, and united India — an India that leads the world with pride and purpose.</p>
+    </div>
+  </section>
 </body>
 </html>
